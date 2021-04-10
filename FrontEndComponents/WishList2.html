@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html ng-app="WishList">
+  <head>
+    <h2 style="text-align: center;">Guest wishlist</h2>
+    <div id='msg'></div>
+    <div id='products_container'>
+    <div class='item-container'>
+      <div class='product_name col-s'>
+        Room X
+     </div>
+    <div class='product_price col-s'>
+      <span class="currency-symbol">$</span>
+      <span class="price">199</span>
+    </div>
+    <div class='product_action col-s'>
+      <button class='wishlist' product_name='Product 1' product_id='product1' product_price='199'>
+        <span>Add to wishlist</span>
+      </button>
+    </div>
+  </div>
+  <div class='item-container'>
+    <div class='product_name col-s'>
+      Room Y
+    </div>
+    <div class='product_price col-s'>
+      <span class="currency-symbol">$</span>
+      <span class="price">299</span>
+    </div>
+    <div class='product_action col-s'>
+      <button class='wishlist' product_name='Product 2' product_id='product2' product_price='299'>
+        <span>Add to wishlist</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<div id='wish_list' class='col-s'>
+  <p class="wish_list_heading">
+    <span id='listitem'>0</span>
+    <span id='p_label'>Rooms_In_WishList</span>
+  </p>
+  <table id='wish_list_item' border='0'></table>
+</div>
+
+
+<style type="text/css">
+	body {
+  	background: whitesmoke;
+	}
+
+	body,
+	span,
+	div,
+	button {
+  	font-family: 'open sans', sans-serif;
+  	font-size: 13px;
+	}
+
+	#products_container {
+  	width: 90%;
+ 	 background: white;
+ 	 margin: 0px auto;
+	}
+
+.item-container {
+  width: 100%;
+  overflow: hidden;
+  border-bottom: 1px solid #e1e1e1;
+  padding: 6px 0px;
+}
+
+.col-s {
+  width: 24%;
+  float: left;
+  margin: 0px 4px;
+}
+
+button {
+  text-align: center;
+  text-transform: uppercase;
+  padding: 8px 17px;
+  margin: 2px;
+  border: 2px solid #f1f1f1;
+  background-color: transparent;
+  vertical-align: middle;
+  cursor: pointer;
+  white-space: nowrap;
+  font-size: 13px;
+  color: #323470;
+}
+
+img.heartSymbol {
+  width: 25px;
+  vertical-align: middle;
+}
+
+#wish_list {
+  position: fixed;
+  bottom: 0px;
+  right: 0px;
+  height: 30px;
+  width: 300px;
+  background: #f5f5f5;
+  border: 1px solid #e1e1e1;
+}
+
+#wish_list .wish_list_heading {
+  margin: 0px 0px;
+  text-align: center;
+  color: #fff;
+  height: 30px;
+  background-color: #323470;
+  padding: 6px 3px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#wish_list_item {
+  width: 100%;
+  text-align: center;
+  border-spacing: 0px;
+  border-collapse: separate;
+}
+
+#msg {
+  position: fixed;
+  display: none;
+  padding: 10px 25px;
+  background: white;
+  border: 1px solid #d1d1d1;
+  border-radius: 4px;
+  font-size: 15px;
+  width: 30%;
+  text-align: center;
+}
+
+.wishlist-item {
+  padding: 10px 5px;
+  background: #f1f1f1;
+  color: #323470;
+}
+
+.w-premove {
+  font-size: 23px;
+  cursor: pointer;
+}
+
+.w-pname,
+.w-price {
+  font-size: 13px;
+}
+</style>
+</head>
+
+<body>
+<script>
+//var wish_list = new Array();
+var wishlistkey = "wishlist";
+// try and fetch an existing wishlist from the localStorage.
+var wish_list = localStorage.getItem(wishlistkey)
+if($.isEmptyObject(wish_list)) //nothing was saved previously
+  wish_list = new Array()
+else // this is the case where something was previously saved.
+  wish_list = JSON.parse(wish_list)
+
+
+$(document).ready(function() {
+  $(".wishlist").on("click", function() {
+    $data = "";
+    $product_id = $(this).attr("product_id");
+    a
+    $product_name = $(this).attr("product_name");
+    $prduct_price = $(this).attr("product_price");
+    //check if the element is in the array
+    if ($.inArray($product_id, wish_list) == -1) {
+      $product_str = "<tr class='wishlist-item' id='list_id_" + $product_id + "'><td class='w-pname'>" + $product_name + "</td><td class='w-price'>$ " + $prduct_price + "</td><td class='w-premove' wpid='" + $product_id + "'>x</td></tr>";
+      $("#wish_list_item").append($product_str);
+      wish_list.push($product_str);
+      show_message("Product " + $product_name + " added");
+      count_items_in_wishlist_update();
+
+    }
+
+  });
+
+//adding toggle functionality to the wishlist pannel
+  $(".wish_list_heading").on("click", function() {
+    if (!$(this).hasClass("up")) {
+      $("#wish_list").css("height", "300px");
+      $(this).addClass("up");
+      $("#wish_list").css("overflow", "auto");
+    } else {
+      $("#wish_list").css("height", "30px");
+      $(this).removeClass("up");
+      $("#wish_list").css("overflow", "hidden");
+    }
+
+  });
+
+  $("#wish_list_item").on("click", ".w-premove", function() {
+    $product_id = $(this).attr("wpid");
+    $("#list_id_" + $product_id).remove();
+
+
+
+    wish_list = $.grep(wish_list, function(n, i) {
+      return n != $product_id;
+    });
+    localStorage.setItem(wishlistkey, JSON.stringify(wish_list))
+    show_message("Product removed");
+    count_items_in_wishlist_update();
+  });
+});
+
+function show_message($msg) {
+  $("#msg").html($msg);
+  $top = Math.max(0, (($(window).height() - $("#msg").outerHeight()) / 2) + $(window).scrollTop()) + "px";
+  $left = Math.max(0, (($(window).width() - $("#msg").outerWidth()) / 2) + $(window).scrollLeft()) + "px";
+  $("#msg").css("left", $left);
+  $("#msg").animate({
+    opacity: 0.6,
+    top: $top
+  }, 400, function() {
+    $(this).css({
+      'opacity': 1
+    });
+  }).show();
+  setTimeout(function() {
+    $("#msg").animate({
+      opacity: 0.6,
+      top: "0px"
+    }, 400, function() {
+      $(this).hide();
+    });
+  }, 1000);
+}
+
+//Validation against the amount of product being added
+function count_items_in_wishlist_update() {
+  $("#listitem").html(wish_list.length);
+  if (wish_list.length > 1) {
+    $("#p_label").html("Products");
+  } else {
+    $("#p_label").html("Product");
+  }
+}
+</script>
+</body>
+</html>
+
+	
