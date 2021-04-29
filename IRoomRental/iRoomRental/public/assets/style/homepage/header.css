@@ -1,0 +1,396 @@
+/* min-width 1128 */
+
+@media screen and (min-width: 1128px) {
+  .landingPage {
+    /* height: 100%; */
+    height: 100vh 100vw !important;
+    position: relative !important;
+    background-image: url("/assets/pictures/landing-page.jpg") !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    display: grid !important;
+  }
+
+  .landingPage__header {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    grid-template-rows: 78px !important;
+  }
+
+  .landingPage__header--logo {
+    display: flex !important;
+  }
+
+  .landingPage__header--logo img {
+    width: 12% !important;
+    height: 30% !important;
+    align-self: center !important;
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+  }
+
+  .landingPage__header--info {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+  }
+
+  .landingPage__header--info li {
+    display: inline !important;
+    padding: 8px !important;
+    color: rgb(255, 255, 255) !important;
+    font-family: "Circular" !important;
+    line-height: 1px !important;
+    margin: 10px !important;
+    font-weight: 600 !important;
+  }
+
+  .landingPage__header--info li:hover {
+    cursor: pointer;
+  }
+
+  .landingPage__header--info li > a {
+    text-decoration: none;
+    display: inline !important;
+    padding: 8px !important;
+    color: rgb(255, 255, 255) !important;
+    font-family: "Circular" !important;
+    line-height: 1px !important;
+    margin: 10px !important;
+    font-weight: 600 !important;
+  }
+
+  .landingPage__header--form {
+    border-radius: 4px !important;
+    background: #ffffff !important;
+    padding: 32px !important;
+    padding-bottom: 24px !important;
+    width: 500px !important;
+    height: 480px !important;
+    margin-bottom: 64px !important;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12) !important;
+    margin-left: 155.5px !important;
+    margin-right: 134.5px !important;
+  }
+
+  .landingPage__form--title h1 {
+    font-size: 30px !important;
+    line-height: 36px !important;
+    letter-spacing: normal !important;
+    font-family: "Circular", "-apple-system", "BlinkMacSystemFont", "Roboto",
+      "Helvetica Neue", "sans-serif" !important;
+    color: #484848 !important;
+    padding-top: 6px !important;
+    padding-bottom: 6px !important;
+    margin: 0px !important;
+    padding: 0px !important;
+  }
+
+  .landingPage__form--inputs {
+    margin-top: 16px !important;
+    margin-bottom: 16px !important;
+  }
+
+  .landingPage__form--where {
+    margin-top: 16px !important;
+    margin-bottom: 16px !important;
+  }
+
+  .landingPage__form--where > label {
+    display: block !important;
+    margin-bottom: 8px !important;
+  }
+
+  .landingPage__form--where > input {
+    width: 100% !important;
+    height: 48px !important;
+    border-radius: 4px !important;
+    border: 1px solid #ebebeb !important;
+    padding-left: 2px !important;
+  }
+
+  .landingPage__form--checkInOut {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    margin-top: 16px !important;
+    margin-bottom: 16px !important;
+  }
+
+  .landingPage__form--checkIn > input {
+    display: block !important;
+    margin-bottom: 8px !important;
+    height: 48px !important;
+    border-radius: 4px !important;
+    border: 1px solid #ebebeb !important;
+    width: 100% !important;
+    padding-left: 8px !important;
+    color: grey !important;
+  }
+
+  .landingPage__form--checkOut > input {
+    display: block !important;
+    margin-bottom: 8px !important;
+    margin-bottom: 8px !important;
+    height: 48px !important;
+    border-radius: 4px !important;
+    border: 1px solid #ebebeb !important;
+    width: 100% !important;
+    color: grey !important;
+    padding-left: 8px !important;
+  }
+
+  .landingPage__form--hospedes select {
+    color: grey !important;
+  }
+
+  .landingPage__form--hospedes > label {
+    display: block !important;
+    margin-bottom: 8px !important;
+  }
+
+  .landingPage__form--hospedes > select {
+    width: 100% !important;
+    height: 48px !important;
+    border-radius: 4px !important;
+    border: 1px solid #ebebeb !important;
+  }
+
+  .landingPage__form--pesquisar {
+    display: flex !important;
+    justify-content: flex-end !important;
+    margin-bottom: 10px !important;
+    margin-top: 16px !important;
+  }
+
+  .landingPage__form--pesquisar > button {
+    font-family: "Circular", "-apple-system", "BlinkMacSystemFont", "Roboto",
+      "Helvetica Neue", "sans-serif" !important;
+    color: #ffffff !important;
+    border-color: transparent !important;
+    background: #ff5a5f !important;
+    box-shadow: none !important;
+    min-width: 77px !important;
+    padding-right: 24px !important;
+    padding-left: 24px !important;
+    border-style: solid !important;
+    border-width: 2px !important;
+    font-weight: 800 !important;
+    padding-bottom: 12px !important;
+    padding-top: 12px !important;
+    text-align: center !important;
+    align-items: center !important;
+    text-decoration: none !important;
+    border-radius: 4px !important;
+    font-size: 16px !important;
+    line-height: 22px !important;
+    margin: 0px !important;
+    display: flex !important;
+    align-self: center !important;
+  }
+
+  .landingPage__header--oregon {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-end !important;
+    margin-top: -50px !important;
+    margin-right: 20px !important;
+    color: white !important;
+  }
+  .landingPage__header--oregon > p {
+    margin: 0px !important;
+  }
+
+  .landingPage__header--form1 {
+    display: none !important;
+  }
+
+  .landingPage_responsive {
+    display: none !important;
+  }
+
+  .landingPage__title {
+    display: none !important;
+  }
+
+  .landingPage__logo {
+    display: none !important;
+  }
+}
+
+/* max-width 1128 */
+
+@media screen and (max-width: 1128px) {
+  .landingPage {
+    height: 232px !important;
+    width: 100% !important;
+    position: relative !important;
+    background-image: url("/assets/pictures/landing-page.jpg") !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    display: grid !important;
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+    padding-bottom: 0px !important;
+    padding-top: 0px !important;
+  }
+
+  .landingPage__header {
+    display: none !important;
+  }
+
+  .landingPage__header--form {
+    display: none !important;
+  }
+
+  .landingPage__title h1 {
+    font-size: 30px !important;
+    line-height: 36px !important;
+    letter-spacing: normal !important;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto,
+      Helvetica Neue, sans-serif !important;
+    text-transform: undefined !important;
+    color: #ffffff !important;
+    padding-top: 6px !important;
+    padding-bottom: 6px !important;
+    font-weight: bold !important;
+    margin: 0px !important;
+    padding: 0px !important;
+  }
+
+  .landingPage__header--oregon {
+    display: none;
+  }
+
+  .landingPage__title {
+    align-self: flex-end;
+  }
+
+  .landingPage__header--form1 {
+    padding: 24px 24px;
+  }
+
+  .landingPage__form--where {
+    width: 95%;
+    margin-bottom: 16px;
+  }
+
+  .landingPage__form--where > label {
+    display: block;
+  }
+
+  .landingPage__form--where > input {
+    height: 48px;
+    border-radius: 4px;
+    border: 1px solid #ebebeb;
+    width: 100%;
+  }
+
+  .landingPage__form--checkInOut {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 95%;
+  }
+
+  .landingPage__form--checkIn > input {
+    display: block;
+    height: 48px;
+    border-radius: 4px;
+    border: 1px solid #ebebeb;
+    width: 100%;
+    padding-left: 8px;
+    color: grey;
+  }
+
+  .landingPage__form--checkOut > input {
+    display: block;
+    height: 48px;
+    border-radius: 4px;
+    border: 1px solid #ebebeb;
+    width: 99%;
+    color: grey;
+  }
+
+  .landingPage__form--hospedes select {
+    color: grey;
+  }
+
+  .landingPage__form--hospedes > label {
+    display: block;
+  }
+
+  .landingPage__form--hospedes > select {
+    width: 100%;
+    height: 48px;
+    border-radius: 4px;
+    border: 1px solid #ebebeb;
+  }
+
+  .landingPage__form--hospedes {
+    margin-top: 16px;
+    margin-bottom: 16px;
+    width: 95%;
+  }
+
+  .landingPage__form--pesquisar {
+    display: flex;
+    /* justify-content: flex-end; */
+  }
+
+  .landingPage__form--pesquisar > button {
+    font-family: "Circular", "-apple-system", "BlinkMacSystemFont", "Roboto",
+      "Helvetica Neue", "sans-serif";
+    color: #ffffff;
+    border-color: transparent;
+    background: #ff5a5f;
+    box-shadow: none;
+    min-width: 77px;
+    padding-right: 24px;
+    padding-left: 24px;
+    border-style: solid;
+    border-width: 2px;
+    font-weight: 800;
+    padding-bottom: 12px;
+    padding-top: 12px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 16px;
+    line-height: 22px;
+    margin: 0px;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
+  .landingPage__logo img {
+    height: 30%;
+    width: 7%;
+    margin-top: 1%;
+    margin-left: 1%;
+    margin-bottom: 1%;
+  }
+}
+
+form label {
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1.33333em;
+  letter-spacing: 0.0833333em;
+  color: rgb(72, 72, 72);
+}
+
+form input {
+  font-size: 17px !important;
+}
+
+form select {
+  font-size: 17px !important;
+}
+
+.avatar {
+  vertical-align: middle;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
